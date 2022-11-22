@@ -1,0 +1,19 @@
+
+  }
+  
+  h1 {
+    color: navy;
+    margin-left: 20px;
+  }
+
+  a {
+    padding-top: 50px;
+    padding-right: px;
+    padding-bottom: 50px;
+    padding-left: px;
+  }
+
+
+  * {
+    box-sizing: border-box;
+  }
