@@ -97,3 +97,11 @@
     padding-bottom: 2%;
     text-align: center;
   }
+
+
+.prompt {
+    display: block;
+    position: absolute;
+    width: 100px;
+    z-index: 100;
+}
