@@ -1,33 +1,8 @@
 <!DOCTYPE html>
 <html>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
   <link rel="stylesheet" href="styles.css">
-  <head>
-    <style> 
-    input[type=inputbox] {
-      width: 30%;
-      padding: 12px 20px;
-      margin: 8px 0;
-      box-sizing: border-box;
-    }
-    </style>
-    </head>
-
-
-  <head>
-    <style>
-      
-
-
-    * {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: larger ;
-      text-align: left;
-      color: rgb(0, 0, 0);
-
-    }
-    </style>
-    </head>
-
 
 
 <body>
@@ -36,18 +11,19 @@
 
 <p id="D"></p>
 <p id="E"></p> -->
-
+<div class="numbers">
 <a  id="AB"></a> 
 <a>-</a>
 <a id="DE"></a>
+</div>
 <!-- <p id="R"> </p> -->
 <br>
-<input type="inputbox" onkeydown = "if (event.keyCode == 13)
+<input class="inputfield" type="inputbox" onkeydown = "if (event.keyCode == 13)
 document.getElementById('myBtn').click()" id="numb">
+<a " style="color:grey" style="font-family:'Times New Roman', Times, serif" id="demo"></a>
+<button class="Button" id="myBtn" type="button" onclick="myFunction()">CHECK</button>
 
-<button id="myBtn" type="button" onclick="myFunction()">Check</button>
 
-<p id="demo"></p>
 
 
 <script>
@@ -85,7 +61,7 @@ function myFunction() {
   if (x == result) {
     text = "Correct";
   } else {
-    text = "that's not right";
+    text = "incorrect";
   }
   document.getElementById("demo").innerHTML = text;
 }
@@ -111,8 +87,10 @@ input.addEventListener("keypress", function(event) {
 
 
 
-<button type="submit" onClick="refreshPage()">New Values</button>
+<button class="Block" type="submit" onClick="refreshPage()">NEW VALUES</button>
 
 
 </body>
 </html>
+
+
