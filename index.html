@@ -18,7 +18,7 @@
 </div>
 <!-- <p id="R"> </p> -->
 <br>
-<input class="inputfield" type="inputbox" onkeydown = "if (event.keyCode == 13)
+<input inputmode="numeric" class="inputfield" type="inputbox" onkeydown = "if (event.keyCode == 13)
 document.getElementById('myBtn').click()" id="numb">
 
 <br>
@@ -68,9 +68,14 @@ function myFunction() {
   document.getElementById("demo").innerHTML = text;
 }
 
-function refreshPage(){
-    window.location.reload();
-} 
+function newvaluefunc() {
+  document.getElementById("empty").innerHTML = Math.random()
+}
+
+
+// function refreshPage(){
+//     window.location.reload();
+// } 
 
 refreshPage();
 
@@ -86,7 +91,7 @@ input.addEventListener("keypress", function(event) {
 
 
 </script>
-
+<p id="empty"></p>
 <button class="Block" type="submit" onClick="location.reload()">NEW VALUES</button>
 
 <!-- <button class="Block" type="submit" onClick="refreshPage()">NEW VALUES</button> -->
