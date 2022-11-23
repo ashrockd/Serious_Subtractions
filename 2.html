@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+  <link rel="stylesheet" href="styles.css">
+
+
+<body>
+<!-- <p id="A"></p>
+<p id="B"></p>
+
+<p id="D"></p>
+<p id="E"></p> -->
+<div class="numbers">
+<a  id="AB"></a> 
+<a>-</a>
+<a id="DE"></a>
+</div>
+<!-- <p id="R"> </p> -->
+<br>
+<input inputmode="numeric" class="inputfield" type="inputbox" onkeydown = "if (event.keyCode == 13)
+document.getElementById('myBtn').click()" id="numb">
+
+<br>
+<br>
+<button class="Button" id="myBtn" type="button" onclick="myFunction()">CHECK</button>
+
+
+
+
+<script>
+
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+let a = getRandomInt(2,9);
+//document.getElementById("A").innerHTML = a;
+
+let b = getRandomInt(0,8);
+//document.getElementById("B").innerHTML = b;
+
+let d = getRandomInt(1,a-1);
+//document.getElementById("D").innerHTML = d;
+
+let e = getRandomInt(b+1,9);
+//document.getElementById("E").innerHTML = e;
+
+let ab ="" + a + b;
+document.getElementById("AB").innerHTML = ab;
+let de ="" + d + e;
+document.getElementById("DE").innerHTML = de; 
+
+let result = ab-de;
+document.getElementById("R").innerHTML = result;
+
+function myFunction() {
+  // Get the value of the input field with id="numb"
+  let x = document.getElementById("numb").value;
+  // If x is Not a Number or less than one or greater than 10
+  let text;
+  if (x == result) {
+    text = "Correct";
+  } else {
+    text = "incorrect";
+  }
+  document.getElementById("demo").innerHTML = text;
+}
+
+
+
+
+// function refreshPage(){
+//     window.location.reload();
+// } 
+
+refreshPage();
+
+var input = document.getElementById("myInput");
+input.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById("myBtn").click();
+    myFunction();
+  }
+});
+
+
+
+</script>
+<p id="empty"></p>
+
+<!-- <button class="Block" type="submit" onClick="startover()">START OVER</button> -->
+
+
+<button class="Block" type="submit" onClick="location.reload()">NEW VALUES</button>
+
+<!-- <button class="Block" type="submit" onClick="refreshPage()">NEW VALUES</button> -->
+
+<a class="prompt" style="color:grey" style="font-family:'Times New Roman', Times, serif" id="demo"></a>
+</body>
+</html>
+
+
