@@ -23,3 +23,5 @@ a {
       width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
     }
   }
+
+a {border-radius: 20px;}
