@@ -6,11 +6,12 @@ a {
     border: none;
     background-color: #00000073;
     color: white;
-    padding: 14px 28px;
+    padding: 14px 28px ;
     font-size:50px;
     cursor: pointer;
     text-align: center;
     text-transform: uppercase;
+    align-content: center;
   }
 
   .main{
