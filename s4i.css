@@ -12,3 +12,8 @@ a {
     text-align: center;
     text-transform: uppercase;
   }
+
+  .main {
+    float: left;
+    width: 80%; /* The width is 60%, by default */
+  }
