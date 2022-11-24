@@ -23,13 +23,13 @@ document.getElementById('myBtn').click()" id="numb">
 
 <br>
 <br>
-<button class="Button" id="myBtn" type="button" onclick="myFunction()">CHECK</button>
+<button class="Button" id="myBtn" type="button">CHECK</button>
 
 
 
 
 <script>
-
+function startover (){
 function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -69,7 +69,9 @@ function myFunction() {
   } else {
     text = "incorrect";
   }
+  let myfuncruns="check button is wokring"
   document.getElementById("demo").innerHTML = text;
+  document.getElementById("demo1").innerHTML = myfuncruns;
 }
 
 
@@ -90,19 +92,31 @@ input.addEventListener("keypress", function(event) {
   }
 });
 
+let myBtn = document.getElementById("myBtn");
+myBtn.addEventListener("click", myFunction);
 
 
+
+
+
+
+}
 </script>
 <p id="empty"></p>
 
-<!-- <button class="Block" type="submit" onClick="startover()">START OVER</button> -->
+<button class="Block" type="submit" onClick="startover()">START OVER</button>
 
 
-<button class="Block" type="submit" onClick="location.reload()">NEW VALUES</button>
+<!-- <button class="Block" type="submit" onClick="location.reload()">NEW VALUES</button> -->
 
 <!-- <button class="Block" type="submit" onClick="refreshPage()">NEW VALUES</button> -->
 
 <a class="prompt" style="color:grey" style="font-family:'Times New Roman', Times, serif" id="demo"></a>
+
+<a class="prompt" style="color:grey" style="font-family:'Times New Roman', Times, serif" id="demo1"></a>
+
+
+
 </body>
 </html>
 
