@@ -24,11 +24,8 @@ a {
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 
-  .main{
-    float: left;
-    width: 160%; /* The width is 60%, by default */
-  }
-  @media screen and (max-width: 800px) {
+
+  @media screen and (max-width: 200px) {
     .left, .main, .right {
       width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
     }
