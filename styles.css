@@ -30,6 +30,14 @@
     box-sizing: border-box;
   }
 
+  .content {
+    max-width:600px ;
+    margin: auto;
+    background: white;
+    padding:10px;
+    text-align: center;
+    align-self: center
+  }
 
   .main {
     float: left;
