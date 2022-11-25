@@ -2,33 +2,31 @@ a {
     font-family: 'Roboto', sans-serif;
     font-weight: bolder;
     display: block;
-    width: 100%;
+    width: 86%;
     border: none;
     background-color: #00000073;
     color: white;
-    padding: 14px 28px ;
-    font-size:50px;
+    padding: 12px 24px;
+    font-size:32px;
     cursor: pointer;
     text-align: center;
     text-transform: uppercase;
     align-content: center;
+    text-decoration: none
   }
 
   .content {
-    max-width: 500px;
+    max-width:600 ;
     margin: auto;
     background: white;
-    padding: 100px;
+    padding:10px;
+    text-align: center;
+    align-self: center
   }
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-
-
-  @media screen and (max-width: 200px) {
-    .left, .main, .right {
-      width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
-    }
-  }
-
+.empty {
+padding:80px;
+}
 a {border-radius: 20px;}
