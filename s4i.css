@@ -1,32 +1,24 @@
 a {
-    font-family: 'Roboto', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: bolder;
     display: block;
-    width: 86%;
+    width: 100%;
     border: none;
     background-color: #00000073;
     color: white;
-    padding: 12px 24px;
-    font-size:32px;
+    padding: 14px 28px;
+    font-size:50px;
     cursor: pointer;
     text-align: center;
     text-transform: uppercase;
-    align-content: center;
-    text-decoration: none
   }
 
-  .content {
-    max-width:600 ;
-    margin: auto;
-    background: white;
-    padding:10px;
-    text-align: center;
-    align-self: center
+  .main{
+    float: left;
+    width: 160%; /* The width is 60%, by default */
   }
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
-.empty {
-padding:10px;
-}
-a {border-radius: 20px;}
+  @media screen and (max-width: 800px) {
+    .left, .main, .right {
+      width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+    }
+  }
