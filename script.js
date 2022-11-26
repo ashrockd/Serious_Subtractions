@@ -10,12 +10,6 @@ document.getElementById("A").innerHTML = randnum;
 let querythis ="a" + randnum;
 document.getElementById("A").innerHTML = querythis;
 
-
-
-
-
-
-
 const a1 = [17, 4, 68];
 const a2 = [23, 3, 69];
 const a3 = [14, 5, 70];
@@ -118,3 +112,12 @@ const a99 = [26, 9, 234];
 const a100 = [27, 9, 243];
 const a101 = [28, 9, 252];
 const a102 = [29, 9, 261];
+
+let text = "";
+
+querythis.forEach(myFunction);
+document.getElementById("demo").innerHTML = text;
+ 
+function myFunction(item, index) {
+  text += index + ": " + item + "<br>"; 
+}
