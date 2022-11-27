@@ -4,16 +4,8 @@
   <title>factors</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="author" content="Your name">
-  <meta name="description" content="Brief description">
-  <meta property="og:title" content="Your Page Title">
-  <meta property="og:description" content="Brief description">
-  <meta property="og:image" content="/some-image.png">
-  <meta property="og:url" content="/this-page.html">
-  <meta property="og:site_name" content="Your Site Name">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image:alt" content="image description">
-  <link href="./styles.css" rel="stylesheet">
+
+  <link href="styles.css" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 </head>
 <body>
@@ -22,19 +14,17 @@
 
 
 
-<a id="questionFE" ></a> 
-<br>
-
-
-<br>
-<input id="factor1" inputmode="numeric" class="inputfield" type="inputbox"> 
-<input id="factor2" inputmode="numeric" class="inputfield" type="inputbox">
+<a id="questionFE"></a> 
+<a>is</a>
 <button class="Block" type="submit" onClick="onRefreshButtonClick()">NEW VALUES</button>
+
 <br>
-<button class="Block" type="submit" onClick="checksolution()">checksolution</button>
+<input id="factor1" inputmode="numeric" class="inputfield" type="inputbox">
+<input id="factor2" inputmode="numeric" class="inputfield" type="inputbox">
+<button type="submit" onClick="checksolution()">checksolution</button>
 <p id="resultprompt"></p>
 <script>
-const numbers = [36, 48, 60, 72, 84, 96, 108, 39, 52, 65, 78, 91, 104, 117, 42, 56, 70, 84, 98, 112, 126, 45, 60, 75, 90, 105, 120, 135, 48, 64, 80, 96, 112, 128, 144, 51, 68, 85, 102, 119, 136, 153, 54, 72, 90, 108, 126, 144, 162, 57, 76, 95, 114, 133, 152, 171, 63, 84, 105, 126, 147, 168, 189, 66, 88, 110, 132, 154, 176, 198, 69, 92, 115, 138, 161, 184, 207, 72, 96, 120, 144, 168, 192, 216, 75, 100, 125, 150, 175, 200, 225, 78, 104, 130, 156, 182, 208, 234, 81, 108, 135, 162, 189, 216, 243, 84, 112, 140, 168, 196, 224, 252, 87, 116, 145, 174, 203, 232, 261, 93, 124, 155, 186, 217, 248, 279, 111, 148, 185, 222, 259, 296, 333]
+const numbers = [123, 164, 205, 246, 287, 328, 369, 129, 172, 215, 258, 301, 344, 387, 141, 188, 235, 282, 329, 376, 423, 159, 212, 265, 318, 371, 424, 477, 177, 236, 295, 354, 413, 472, 531, 183, 244, 305, 366, 427, 488, 549, 201, 268, 335, 402, 469, 536, 603, 213, 284, 355, 426, 497, 568, 639, 219, 292, 365, 438, 511, 584, 657, 237, 316, 395, 474, 553, 632, 711, 249, 332, 415, 498, 581, 664, 747, 267, 356, 445, 534, 623, 712, 801, 291, 388, 485, 582, 679, 776, 873]
 function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -48,7 +38,7 @@ let questionforcheck= ""
 
 function onRefreshButtonClick() {
 
-    let randnum = getRandomInt(1,133);
+    let randnum = getRandomInt(1,91);
     const question = numbers[randnum];
     document.getElementById("questionFE").innerHTML = question;
     questionforcheck = question;
@@ -114,6 +104,7 @@ function mathtables(){
 </script>
 <p id="d1"></p>
 <button class="Block" type="submit" onClick="mathtables()">never seen this before</button>
+
 
 <p id="tables"></p>
 </body>
