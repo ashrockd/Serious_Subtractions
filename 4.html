@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
-<meta name="viewport" content= "width=device-width, user-scalable=no">
- 
-  <link rel="stylesheet" href="styles.css">
-  <link type="image/png" sizes="96x96" rel="icon" href="images/favicon.png">
+
   <head>
     <title>abcd-efgh</title>
+    <link rel="icon" type="image/png" href="/images/favicon.png">
   </head>
+  <meta name="viewport" content= "width=device-width, user-scalable=no">
+ 
+  <link rel="stylesheet" href="styles.css">
+
 
 <body>
 <!-- <p id="A"></p>
@@ -14,6 +16,7 @@
 
 <p id="D"></p>
 <p id="E"></p> -->
+<div class="content">
 <div class="empty"> </div>
 <div class="numbers">
 <a  id="AB"></a> 
@@ -30,6 +33,12 @@ document.getElementById('myBtn').click()" id="numb">
 <button class="Button" id="myBtn" type="button" onclick="myFunction()">CHECK</button>
 
 
+<p id="empty"></p>
+<button class="Block" type="submit" onClick="onRefreshButtonClick()">NEW VALUES</button>
+<a class="prompt" style="color:grey"  id="demo"></a>
+
+</div>
+
 
 
 <script>
@@ -40,80 +49,64 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-let a = getRandomInt(1,9);
-//document.getElementById("A").innerHTML = a;
+// Generate a new set of numbers
+function getNewIntsToCheck() {
+    const a = getRandomInt(2,9);
+    const a1 = getRandomInt(0,9)
+    const b = getRandomInt(0,8);
+    const d = getRandomInt(1,a-1);  
+    const d1 = getRandomInt(0,9);
+    const e = getRandomInt(b+1,9);
+    const ab ="" + a + a1 + b;
+    const de ="" + d + d1 + e;
+    const result = ab-de;
 
-let a1 = getRandomInt(0,9);
-//document.getElementById("A1").innerHTML = a1; 
-let a2 = getRandomInt(0,9);
-//document.getElementById("A1").innerHTML = a1; 
+    return { ab, de, result }
+}
 
-let b = getRandomInt(0,8);
-//document.getElementById("B").innerHTML = b;
+// Set in parent scope for access in myFunction
+// There are other ways to do this, but this should be easy to understand since
+// you don't have much experience with JS :)
+let res = ""
 
-let d = getRandomInt(1,a-1);
-//document.getElementById("D").innerHTML = d;
+// Update the UI on the click of the refresh button
+function onRefreshButtonClick() {
+    const { ab, de, result } = getNewIntsToCheck()
+    let clearprompt = ""
+    document.getElementById("demo").innerHTML = clearprompt;
+    // Set res from parent scope
+    res = result
+    // document.getElementById("R").innerHTML = result;
+    document.getElementById("AB").innerHTML = ab;
+    document.getElementById("DE").innerHTML = de;
+}
 
-let d1 = getRandomInt(0,9);
-//document.getElementById("D1").innerHTML = d1;
-let d2 = getRandomInt(0,9);
-//document.getElementById("D1").innerHTML = d1;
-
-let e = getRandomInt(b+1,9);
-//document.getElementById("E").innerHTML = e;
-
-let aa1b ="" + a + a1 + a2 + b;
-document.getElementById("AB").innerHTML = aa1b;
-let dd1e ="" + d + d1 + d2 + e;
-document.getElementById("DE").innerHTML = dd1e; 
-
-let result = aa1b-dd1e;
-document.getElementById("R").innerHTML = result;
-
+// Check current numbers in UI against user input and display message
 function myFunction() {
-  // Get the value of the input field with id="numb"
-  let x = document.getElementById("numb").value;
-  // If x is Not a Number or less than one or greater than 10
-  let text;
-  if (x == result) {
-    text = "Correct";
-  } else {
-    text = "incorrect";
-  }
-  document.getElementById("demo").innerHTML = text;
+    let x = document.getElementById("numb").value;
+    let text;
+    // Check against res from parent scope, which was set in
+    // onRefreshButtonClick
+    if (x == res) {
+        text = "correct :D";
+    } else {
+        text = "incorrect -_-";
+    }
+    document.getElementById("demo").innerHTML = text;
 }
 
 
 
-
-// function refreshPage(){
-//     window.location.reload();
-// } 
-
-refreshPage();
-
-var input = document.getElementById("myInput");
-input.addEventListener("keypress", function(event) {
-  if (event.key === "Enter") {
-    event.preventDefault();
-    document.getElementById("myBtn").click();
-    myFunction();
-  }
-});
-
-
-
 </script>
-<p id="empty"></p>
+
 
 <!-- <button class="Block" type="submit" onClick="startover()">START OVER</button> -->
 
 
-<button class="Block" type="submit" onClick="location.reload()">NEW VALUES</button>
 
 <!-- <button class="Block" type="submit" onClick="refreshPage()">NEW VALUES</button> -->
 
-<a class="prompt" style="color:grey" style="font-family:'Times New Roman', Times, serif" id="demo"></a>
+
 </body>
 </html>
 

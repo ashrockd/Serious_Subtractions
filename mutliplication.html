@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Your Page Title</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Your name">
+  <meta name="description" content="Brief description">
+  <meta property="og:title" content="Your Page Title">
+  <meta property="og:description" content="Brief description">
+  <meta property="og:image" content="/some-image.png">
+  <meta property="og:url" content="/this-page.html">
+  <meta property="og:site_name" content="Your Site Name">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image:alt" content="image description">
+  <link href="style.css" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+</head>
+<body>
+
+
+
+
+
+<a id="questionFE"></a> 
+<a>is</a>
+<p id="demo"></p>
+
+<br>
+<input id="factor1" inputmode="numeric" class="inputfield" type="inputbox">
+<input id="factor2" inputmode="numeric" class="inputfield" type="inputbox">
+<button type="submit" onClick="checksolution()">checksolution</button>
+<p id="resultprompt"></p>
+<script>
+const numbers = [17, 34, 51, 68, 85, 102, 119, 136, 153, 170]
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+let randnum = getRandomInt(0,9);
+const question = numbers[randnum]
+document.getElementById("questionFE").innerHTML = question; 
+
+for(let i = 1; i <= question; i++) {
+if(num % i == 0) {
+    console.log(i);
+}
+}
+
+function checksolution() {
+  let x = document.getElementById("factor1").value;
+  let y = document.getElementById("factor2").value;
+  let text;
+  if (question == x*y) {
+    text = "Correct" + " Other factors are "   ;
+  } else {
+    text = "incorrect";
+  }
+  document.getElementById("resultprompt").innerHTML = text;
+}
+
+
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+

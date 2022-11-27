@@ -2,7 +2,7 @@
 <html>
 
   <head>
-    <title>abc-def</title>
+    <title>ab-cd</title>
     <link rel="icon" type="image/png" href="/images/favicon.png">
   </head>
   <meta name="viewport" content= "width=device-width, user-scalable=no">
@@ -52,13 +52,11 @@ function getRandomInt(min, max) {
 // Generate a new set of numbers
 function getNewIntsToCheck() {
     const a = getRandomInt(2,9);
-    const a1 = getRandomInt(0,9)
     const b = getRandomInt(0,8);
     const d = getRandomInt(1,a-1);  
-    const d1 = getRandomInt(0,9);
     const e = getRandomInt(b+1,9);
-    const ab ="" + a + a1 + b;
-    const de ="" + d + d1 + e;
+    const ab ="" + a + b;
+    const de ="" + d + e;
     const result = ab-de;
 
     return { ab, de, result }
@@ -72,8 +70,6 @@ let res = ""
 // Update the UI on the click of the refresh button
 function onRefreshButtonClick() {
     const { ab, de, result } = getNewIntsToCheck()
-    let clearprompt = ""
-    document.getElementById("demo").innerHTML = clearprompt;
     // Set res from parent scope
     res = result
     // document.getElementById("R").innerHTML = result;
@@ -88,9 +84,9 @@ function myFunction() {
     // Check against res from parent scope, which was set in
     // onRefreshButtonClick
     if (x == res) {
-        text = "correct :D";
+        text = "Correct";
     } else {
-        text = "incorrect -_-";
+        text = "incorrect";
     }
     document.getElementById("demo").innerHTML = text;
 }

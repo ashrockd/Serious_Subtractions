@@ -34,7 +34,7 @@ document.getElementById('myBtn').click()" id="numb">
 
 
 <p id="empty"></p>
-<button class="Block" type="submit" onClick="location.reload()">NEW VALUES</button>
+<button class="Block" type="submit" onClick="onRefreshButtonClick()">NEW VALUES</button>
 <a class="prompt" style="color:grey"  id="demo"></a>
 
 </div>
@@ -49,59 +49,49 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+// Generate a new set of numbers
+function getNewIntsToCheck() {
+    const a = getRandomInt(2,9);
+    const b = getRandomInt(0,8);
+    const d = getRandomInt(1,a-1);  
+    const e = getRandomInt(b+1,9);
+    const ab ="" + a + b;
+    const de ="" + d + e;
+    const result = ab-de;
 
-
-
-let a = getRandomInt(2,9);
-//document.getElementById("A").innerHTML = a;
-
-let b = getRandomInt(0,8);
-//document.getElementById("B").innerHTML = b;
-
-let d = getRandomInt(1,a-1);
-//document.getElementById("D").innerHTML = d;
-
-let e = getRandomInt(b+1,9);
-//document.getElementById("E").innerHTML = e;
-
-let ab ="" + a + b;
-document.getElementById("AB").innerHTML = ab;
-let de ="" + d + e;
-document.getElementById("DE").innerHTML = de; 
-
-let result = ab-de;
-document.getElementById("R").innerHTML = result;
-
-function myFunction() {
-  // Get the value of the input field with id="numb"
-  let x = document.getElementById("numb").value;
-  // If x is Not a Number or less than one or greater than 10
-  let text;
-  if (x == result) {
-    text = "Correct";
-  } else {
-    text = "incorrect";
-  }
-  document.getElementById("demo").innerHTML = text;
+    return { ab, de, result }
 }
 
+// Set in parent scope for access in myFunction
+// There are other ways to do this, but this should be easy to understand since
+// you don't have much experience with JS :)
+let res = ""
 
+// Update the UI on the click of the refresh button
+function onRefreshButtonClick() {
+    const { ab, de, result } = getNewIntsToCheck()
+    let clearprompt = ""
+    document.getElementById("demo").innerHTML = clearprompt;
+    // Set res from parent scope
+    res = result
+    // document.getElementById("R").innerHTML = result;
+    document.getElementById("AB").innerHTML = ab;
+    document.getElementById("DE").innerHTML = de;
+}
 
-
-// function refreshPage(){
-//     window.location.reload();
-// } 
-
-refreshPage();
-
-var input = document.getElementById("myInput");
-input.addEventListener("keypress", function(event) {
-  if (event.key === "Enter") {
-    event.preventDefault();
-    document.getElementById("myBtn").click();
-    myFunction();
-  }
-});
+// Check current numbers in UI against user input and display message
+function myFunction() {
+    let x = document.getElementById("numb").value;
+    let text;
+    // Check against res from parent scope, which was set in
+    // onRefreshButtonClick
+    if (x == res) {
+        text = "Correct";
+    } else {
+        text = "incorrect";
+    }
+    document.getElementById("demo").innerHTML = text;
+}
 
 
 
