@@ -29,7 +29,7 @@
 <br>
 <input id="factor1" inputmode="numeric" class="inputfield" type="inputbox"> 
 <input id="factor2" inputmode="numeric" class="inputfield" type="inputbox">
-<button class="Block" type="submit" onClick="onRefreshButtonClick()">NEW VALUES</button>
+<button class="Block" type="submit" onClick="onRefreshButtonClick(); document.getElementById('factor1').value = ''; document.getElementById('factor2').value = ''">NEW VALUES</button>
 <br>
 <button class="Block" type="submit" onClick="checksolution()">checksolution</button>
 <p id="resultprompt"></p>

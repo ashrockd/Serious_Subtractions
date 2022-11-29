@@ -34,7 +34,7 @@ document.getElementById('myBtn').click()" id="numb">
 
 
 <p id="empty"></p>
-<button class="Block" type="submit" onClick="onRefreshButtonClick()">NEW VALUES</button>
+<button class="Block" type="submit" onClick="onRefreshButtonClick(); document.getElementById('numb').value = ''"" >NEW VALUES</button>
 <a class="prompt" style="color:grey"  id="demo"></a>
 
 </div>
@@ -71,6 +71,7 @@ let res = ""
 function onRefreshButtonClick() {
     const { ab, de, result } = getNewIntsToCheck()
     let clearprompt = ""
+    let numb = ""
     document.getElementById("demo").innerHTML = clearprompt;
     // Set res from parent scope
     res = result

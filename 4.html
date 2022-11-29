@@ -34,7 +34,7 @@ document.getElementById('myBtn').click()" id="numb">
 
 
 <p id="empty"></p>
-<button class="Block" type="submit" onClick="onRefreshButtonClick()">NEW VALUES</button>
+<button class="Block" type="submit" onClick="onRefreshButtonClick(); document.getElementById('numb').value = ''"">NEW VALUES</button>
 <a class="prompt" style="color:grey"  id="demo"></a>
 
 </div>
@@ -52,13 +52,15 @@ function getRandomInt(min, max) {
 // Generate a new set of numbers
 function getNewIntsToCheck() {
     const a = getRandomInt(2,9);
-    const a1 = getRandomInt(0,9)
+    const a1 = getRandomInt(0,9);
+    const a2 = getRandomInt(0,9);
     const b = getRandomInt(0,8);
     const d = getRandomInt(1,a-1);  
     const d1 = getRandomInt(0,9);
+    const d2 = getRandomInt(0,9);
     const e = getRandomInt(b+1,9);
-    const ab ="" + a + a1 + b;
-    const de ="" + d + d1 + e;
+    const ab ="" + a + a1 + a2 + b;
+    const de ="" + d + d1 + d2 + e;
     const result = ab-de;
 
     return { ab, de, result }
